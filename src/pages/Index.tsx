@@ -8,14 +8,14 @@ const Index = () => {
       {/* Logo in top left corner */}
       <div className="absolute top-4 left-4 z-10">
         <img 
-          src="/lovable-uploads/91bb2958-0589-4771-b5d2-573ec5234e10.png" 
+          src="/lovable-uploads/15a95632-ec1f-4533-94bd-31891c74f53c.png" 
           alt="SunNeo Logo" 
-          className="w-16 h-16 object-contain rounded-lg shadow-md bg-white/80 backdrop-blur-sm p-2"
+          className="w-24 h-24 object-contain"
         />
       </div>
       
-      <div className="w-full max-w-md">
-        <Game logoImage="/lovable-uploads/91bb2958-0589-4771-b5d2-573ec5234e10.png" />
+      <div className="w-full max-w-lg">
+        <Game logoImage="/lovable-uploads/8db31573-1a6b-448f-b1a8-53f0d088c0f4.png" />
       </div>
       
       <footer className="mt-8 text-center text-slate-500 text-sm">
