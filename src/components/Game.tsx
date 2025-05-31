@@ -88,11 +88,6 @@ const Game: React.FC<GameProps> = ({ logoImage }) => {
     setShowJoinAnimation(false);
     setShowCompleteImage(false);
     setGameInitialized(true);
-    
-    toast({
-      title: "Game Started!",
-      description: "Rearrange the tiles to solve the puzzle.",
-    });
   }, [imageLoaded]);
   
   // Check if the puzzle is solved
@@ -114,12 +109,6 @@ const Game: React.FC<GameProps> = ({ logoImage }) => {
         setShowCompleteImage(true);
         setShowConfetti(true);
       }, 1000);
-      
-      toast({
-        title: "Congratulations!",
-        description: "You solved the puzzle!",
-        variant: "default",
-      });
     }
     
     return isCorrect;
@@ -237,11 +226,6 @@ const Game: React.FC<GameProps> = ({ logoImage }) => {
         if (prevTime <= 1) {
           clearInterval(timer);
           setGameOver(true);
-          toast({
-            title: "Time's Up!",
-            description: "You ran out of time. Try again!",
-            variant: "destructive",
-          });
           return 0;
         }
         return prevTime - 1;
@@ -421,6 +405,31 @@ const Game: React.FC<GameProps> = ({ logoImage }) => {
             </Button>
           </div>
         )}
+        
+        {/* {gameStarted && !gameOver && (
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <div className="controls flex items-center space-x-1">
+              <Button size="icon" variant="outline" onClick={() => {}} className="w-10 h-10">
+                <ArrowLeft className="h-4 w-4" />
+              </Button>
+              <div className="flex flex-col gap-1">
+                <Button size="icon" variant="outline" onClick={() => {}} className="w-10 h-10">
+                  <ArrowUp className="h-4 w-4" />
+                </Button>
+                <Button size="icon" variant="outline" onClick={() => {}} className="w-10 h-10">
+                  <ArrowDown className="h-4 w-4" />
+                </Button>
+              </div>
+              <Button size="icon" variant="outline" onClick={() => {}} className="w-10 h-10">
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </div>
+            <div className="ml-4 text-sm text-slate-500">
+              <p>PC: Use arrow keys</p>
+              <p>Mobile: Swipe to move</p>
+            </div>
+          </div>
+        )} */}
       </Card>
       
       {showConfetti && isWin && <Confetti />}
